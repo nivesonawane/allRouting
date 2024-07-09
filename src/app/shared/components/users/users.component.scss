@@ -1,0 +1,11 @@
+
+li{
+   box-shadow: 2px 2px 2px rgba(#000,.4);
+   margin-bottom: 5px; 
+
+   &:active,&:hover{
+    box-shadow: none;
+     background-color: purple;
+     color: #fff;
+   }
+}

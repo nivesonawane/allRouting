@@ -1,0 +1,18 @@
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{productObj.pname}}</mat-card-title>
+      <mat-card-subtitle>{{productObj.pstatus}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="prodImg" [src]="productObj.pimgUrl" [alt]="productObj.pname" [title]="productObj.pname">
+    <mat-card-content>
+      <p>
+        {{productObj.pFeature}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-between">
+      <button mat-stroked-button routerLink="edit" [queryParamsHandling]="'preserve'">EDIT</button>
+      <button mat-stroked-button (click)="onDeleteProd()">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+  

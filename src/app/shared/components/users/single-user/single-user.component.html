@@ -1,0 +1,18 @@
+
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{userObj.userName}}</mat-card-title>
+      <mat-card-subtitle>{{userObj.userRole}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{userObj.userDesc}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-between">
+      <button mat-stroked-button routerLink="edit" [queryParamsHandling]="'preserve'">EDIT</button>
+      <button mat-stroked-button (click)="onremove()">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+  

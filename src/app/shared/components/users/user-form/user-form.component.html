@@ -1,0 +1,32 @@
+
+<mat-card>
+   <mat-card-content>
+     <form [formGroup]="userForm" (ngSubmit)="onAddUser()">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="userName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="userRole" required>
+              <mat-option value="Candidate">Candidate</mat-option>
+              <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" color="accent">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput formControlName="userDesc" required></textarea>
+          </mat-form-field>
+
+          <mat-card-actions class="text-right">
+            <button mat-raised-button color="primary" type="submit" *ngIf="!isinEditMode">Add User</button>
+            <button mat-raised-button color="primary" type="button" *ngIf="isinEditMode"
+             (click)="onUpdateUser()"
+            >Update User</button>
+          </mat-card-actions> 
+     </form>
+   </mat-card-content> 
+  
+</mat-card>

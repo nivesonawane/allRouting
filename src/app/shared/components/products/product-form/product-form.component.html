@@ -1,0 +1,45 @@
+
+<mat-card>
+   <mat-card-content>
+     <form [formGroup]="productForm" (ngSubmit)="onAddprod()">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="pname" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="pstatus" required>
+              <mat-option value="In-progress">In-progress</mat-option>
+              <mat-option value="Dispatched">Dispatched</mat-option>
+              <mat-option value="Delivered">Delivered</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" color="accent">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="canReturn" required>
+              <mat-option value="1">Yes</mat-option>
+              <mat-option value="0">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" color="accent">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput formControlName="pFeature" required></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" color="accent">
+            <mat-label>Product Image Url</mat-label>
+            <input matInput formControlName="pimgUrl" required>
+        </mat-form-field>
+
+        <mat-card-actions class="text-right">
+            <button mat-raised-button color="primary" type="submit" *ngIf="!isinEditMode">Add Product</button>
+            <button mat-raised-button color="primary" type="button" *ngIf="isinEditMode"
+             (click)="onUpdateProduct()"
+            >Update Product</button>
+          </mat-card-actions> 
+     </form>
+   </mat-card-content>  
+</mat-card>

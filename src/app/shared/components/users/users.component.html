@@ -1,0 +1,26 @@
+
+<div class="container">
+   <div class="row">
+      <div class="col-12 my-3 text-right">
+        <button mat-mini-fab color="primary" routerLink="adduser" aria-label="Example icon button with a plus one icon">
+            <mat-icon>add</mat-icon>
+          </button>
+      </div>
+   </div> 
+
+   <div class="row">
+     <div class="col-md-5">
+        <ul class="list-group">
+           <li class="list-group-item" routerLink="{{user.userId}}" [queryParams]="{
+           canEdit:user.userRole}"
+            *ngFor="let user of allUsers">
+              {{user.userName}}
+           </li> 
+        </ul>
+     </div>
+
+     <div class="col-md-7">
+        <router-outlet></router-outlet>
+     </div>
+   </div>
+</div>

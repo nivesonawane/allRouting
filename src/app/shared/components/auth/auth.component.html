@@ -1,0 +1,60 @@
+
+<main class="main">
+  <div class="auth-form">
+      <mat-card>
+          <div class="loginForm" *ngIf="alreadyHasAccount">
+            <h2>Log In Form</h2>
+             <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> 
+              <mat-form-field appearance="fill" color="accent">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" color="accent">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="text-right">
+                <button mat-raised-button color="primary" type="submit">Log In</button>
+              </div>
+              
+             </form> 
+            <a href="javascript:;" (click)="alreadyHasAccount = !alreadyHasAccount" class="btn btn-link">
+              Don't have account yet!!
+            </a>
+            <div class="row">
+              <div class="col-md-7" (click)="show = !show">
+                 <div class="alert alert-warning">Show Credentials</div>
+                 <div class="alert alert-info" *ngIf="show">
+                        <p><strong>Buyer</strong><br>
+                          <span>email : jhon@gmail.com</span><br>
+                          <span>Password: jhon@123</span>
+                      </p>
+                      <p><strong>Admin</strong><br>
+                        <span>email : june@gmail.com</span><br>
+                        <span>Password: june@123</span>
+                      </p>
+                     <p><strong>Super Admin</strong><br>
+                       <span>email : may@gmail.com</span><br>
+                       <span>Password:may@123</span>
+                      </p>
+                 </div>
+               
+              </div>
+            </div>
+          </div>
+          
+          <div class="signupForm" *ngIf="!alreadyHasAccount">
+            <h2>Signup Form</h2>
+
+            <a href="javascript:;" (click)="alreadyHasAccount = !alreadyHasAccount" class="btn btn-link">
+              Already has account
+            </a>
+          </div>
+         
+      </mat-card>
+  </div>
+</main>

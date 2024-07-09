@@ -1,0 +1,11 @@
+
+<div class="card fair-card mb-4" routerLink="{{fairObj.fairId}}" routerLinkActive="active">
+   <div class="card-body">
+      <h3>{{fairObj.fairName}}</h3>
+
+      <div class="event-details">
+         <p class="m-0">Event type: {{fairObj.type}}</p>
+         <p class="m-0">Date: {{(fairObj.startDate * 1000) | date}}</p>
+      </div>
+   </div> 
+</div>
